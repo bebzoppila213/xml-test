@@ -1,0 +1,22 @@
+{
+    "name": "ilya/xml-test",
+    "description": "Парсинг файла",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src",
+            "App\\xml\\": "src/parser/xml"
+        }
+    },
+    "authors": [
+        {
+            "name": "imalofeev6",
+            "email": "imalofeev6@gmail.com"
+        }
+    ],
+    "require": {
+        "nilportugues/sql-query-builder": "^1.8",
+      "ext-pdo": "*",
+      "ext-simplexml": "*",
+      "ext-json": "*"
+    }
+}
