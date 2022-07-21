@@ -6,7 +6,7 @@ class OffersXml
 {
     private string $filePath;
 
-    public function __construct($filePath)
+    public function __construct(string $filePath)
     {
         $this->filePath = $filePath;
     }

@@ -7,7 +7,7 @@ use App\Offers\OffersDb;
 
 class OffersAdd implements OffersOperateInterface
 {
-    public function operate($offers)
+    public function operate(array $offers)
     {
         $offersDb = new OffersDb();
         foreach ($offers as $value){

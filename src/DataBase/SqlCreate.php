@@ -6,9 +6,9 @@ use NilPortugues\Sql\QueryBuilder\Builder\GenericBuilder;
 
 class SqlCreate
 {
-    private static $builder;
+    private static GenericBuilder $builder;
 
-    public static function create($tableName, $data)
+    public static function create(string $tableName, array $data)
     {
         SqlCreate::createBuilder();
         $query = SqlCreate::$builder->insert()
@@ -17,7 +17,7 @@ class SqlCreate
         return SqlCreate::getSqlAndValues($query);
     }
 
-    public static function delete($tableName, $fieldName, $fieldValue)
+    public static function delete(string $tableName, string $fieldName, $fieldValue): array
     {
         SqlCreate::createBuilder();
         $query = SqlCreate::$builder->delete()
@@ -29,7 +29,7 @@ class SqlCreate
         return SqlCreate::getSqlAndValues($query);
     }
 
-    public static function update($tableName, $whereName, $whereValue, $arrayUpdate)
+    public static function update(string $tableName,string $whereName, $whereValue, array $arrayUpdate): array
     {
         SqlCreate::createBuilder();
         $query = SqlCreate::$builder->update()
@@ -41,7 +41,7 @@ class SqlCreate
         return SqlCreate::getSqlAndValues($query);
     }
 
-    public static function selectAll($tableName)
+    public static function selectAll($tableName): string
     {
         SqlCreate::createBuilder();
         $query = SqlCreate::$builder->select()->setTable($tableName);
@@ -49,7 +49,7 @@ class SqlCreate
     }
 
 
-    private static function getSqlAndValues($query)
+    private static function getSqlAndValues($query): array
     {
         $sql = SqlCreate::$builder->write($query);
         $values = SqlCreate::$builder->getValues();
@@ -63,7 +63,7 @@ class SqlCreate
         }
     }
 
-    public static function correctData($data)
+    public static function correctData(array $data): array
     {
         $newData = [];
         foreach ($data as $key => $value){

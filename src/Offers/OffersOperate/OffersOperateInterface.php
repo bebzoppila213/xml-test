@@ -2,5 +2,5 @@
 namespace App\Offers\OffersOperate;
 
     interface OffersOperateInterface{
-        public function operate($offers);
+        public function operate(array $offers);
     }

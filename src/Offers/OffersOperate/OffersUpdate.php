@@ -6,7 +6,7 @@ use App\Offers\OffersDb;
 
 class OffersUpdate implements OffersOperateInterface
 {
-    public function operate($offers)
+    public function operate(array $offers)
     {
         $offersDb = new OffersDb();
         foreach ($offers as $value){

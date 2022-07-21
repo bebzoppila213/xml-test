@@ -11,7 +11,7 @@ class OffersManager
     private OffersOperateInterface $operate;
     private string $filePath;
 
-    public function __construct($filePath)
+    public function __construct(string $filePath)
     {
         $this->filePath = $filePath;
     }
@@ -24,12 +24,12 @@ class OffersManager
         $this->operate->operate($filterData);
     }
 
-    public function setFilter($filter)
+    public function setFilter(FilterInterface $filter)
     {
         $this->filter = $filter;
     }
 
-    public function setOperate($operate)
+    public function setOperate(OffersOperateInterface $operate)
     {
         $this->operate = $operate;
     }

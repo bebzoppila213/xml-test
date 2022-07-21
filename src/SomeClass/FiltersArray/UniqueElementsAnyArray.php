@@ -8,12 +8,12 @@ class UniqueElementsAnyArray implements  FilterInterface
 {
     private int $filterIndex;
 
-    public function __construct($filterIndex)
+    public function __construct(int $filterIndex)
     {
         $this->filterIndex = $filterIndex;
     }
 
-    public function filter($arr1, $arr2)
+    public function filter(array $arr1,array $arr2): array
     {
         $filterable = $this->filterIndex === 1 ? $arr1 : $arr2;
         $filtrate = $this->filterIndex === 1 ? $arr2 : $arr1;

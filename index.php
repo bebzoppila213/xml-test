@@ -23,8 +23,7 @@
     print_r('a - Добавить в базу записи, которых в ней ещё нет'.PHP_EOL);
     print_r('b - Обновить записи, пришедшие в XML, которые уже ест в базе'.PHP_EOL);
     print_r('c - Удалить записи из базы, которых нет в XML'.PHP_EOL);
-    do
-    {
+    do {
         $action = trim(fgets(STDIN));
     }while(!in_array($action, ['a', 'b', 'c']));
 
